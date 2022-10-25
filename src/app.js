@@ -12,9 +12,7 @@ const abandonedCheckoutRouter = require('./routes/abandonedCheckout/abandonedChe
 const ordersRouter = require('./routes/orders/orders.router');
 const app = express();
 
-app.use(cors({
-    origin: 'http://localhost:3000',
-}));
+app.use(cors());
 
 app.use(morgan('c'));
 app.use(express.json());
