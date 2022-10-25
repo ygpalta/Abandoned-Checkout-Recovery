@@ -5,6 +5,7 @@ const morgan = require('morgan');
 
 const planetsRouter = require('./routes/planets/planets.router');
 const launchesRouter = require('./routes/launches/launches.router');
+const itemsRouter = require('./routes/items/items.router');
 const app = express();
 
 app.use(cors({
@@ -14,6 +15,8 @@ app.use(cors({
 app.use(morgan('c'));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "..", 'public')));
+
+app.use('/items', itemsRouter);
 
 app.use('/planets', planetsRouter);
 app.use('/launches', launchesRouter);
