@@ -1,0 +1,63 @@
+    "checkout_id": 901414060,
+    "closed_at": null,
+    "isAbandoned": null,
+    "contact_email": "bob.norman@mail.example.com",
+    "created_at": "2008-01-10T11:00:00-05:00",
+    "current_total_price": "199.65",
+    "landing_site": "http://www.example.com?source=abc",
+    "customer": {
+      "id": 207119551,
+      "email": "bob.norman@mail.example.com",
+      "first_name": "Bob",
+      "last_name": "Norman",
+      "phone": "+16136120707",
+      "address": "Chestnut Street 92",
+      "city": "Louisville",
+      "province": "Kentucky",
+      "country": "United States",
+      "zip": "40202"
+    },
+    "line_items": [
+      [
+        {
+          "id": 0,
+          "name": "Apple iPhone 13",
+          "price": "80000"
+        },
+        {
+          "id": 1,
+          "name": "Apple Airpords 2",
+          "price": "15000"
+        },
+        {
+          "id": 2,
+          "name": "Airpords Pro 2",
+          "price": "25000"
+        },
+        {
+          "id": 3,
+          "name": "Apple Watch",
+          "price": "40000"
+        },
+        {
+          "id": 4,
+          "name": "Apple iPad Air",
+          "price": "50000"
+        },
+        {
+          "id": 5,
+          "name": "Apple Airtag",
+          "price": "10000"
+        },
+        {
+          "id": 6,
+          "name": "Macbook Pro",
+          "price": "180000"
+        },
+        {
+          "id": 7,
+          "name": "Apple 1Kg California",
+          "price": "200"
+        }
+      ]
+    ]
