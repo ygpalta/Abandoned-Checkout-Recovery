@@ -6,11 +6,16 @@ const { loadPlanetData } = require('./models/planets.model');
 const { mongoConnect } = require('./services/mongo');
 const { startBree } = require('./services/appcron');
 const { loadLaunchData } = require('./models/launches.model');
+const {main} = require('../jobs/sendEmail');
 const server = http.createServer(app);
 
 
 
 async function startServer() {
+   
+    // await main();
+    // console.log("without await");
+    // main();
     await mongoConnect();
     await loadPlanetData();
     await loadLaunchData();
