@@ -29,6 +29,8 @@ async function getList(){
         ]
     }        
     )
+    console.log("scheduled for:");
+    console.log(list);
     return list
 }
 

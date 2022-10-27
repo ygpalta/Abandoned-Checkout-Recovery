@@ -30,10 +30,10 @@ async function main() {
           const list = await getList();
     console.log("AbandonedList:", list);
     list.forEach(async (checkout) => {
-
+        
         const recipient = checkout.contact_email;
         const message = `Hi ${checkout.customer.name}, you were trying to place an order with us but failed to do so. Don't worry, You can complete your transaction by clicking on below link: \n ${process.env.URL}/checkout/${checkout.checkout_id} .`
-    
+        console.log("Sending Email reminder to ", checkout.customer.name);
         //Email configuration
         await transporter.sendMail({
             from: "smtpserver1.2@outlook.com", //SENDER
