@@ -22,7 +22,7 @@ async function checkIsAbandoned(id) {
 }
 async function getList(){
     const currDate = new Date(Date.now());
-    const list = carts.find({
+    const list = await carts.find({
         $and: [
             { isAbandoned: true },
             { $or: [{ mail1: currDate }, { mail2: currDate }, { mail3: currDate }] }
