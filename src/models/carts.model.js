@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { parse } = require('csv-parse');
 const carts = require('./carts.mongo');
-
+const { getSettings } = require('./settings.model');
 
 
 async function getCartById(id) {
@@ -42,9 +42,10 @@ async function saveCart(cart){
 
 
 async function setIsAbandonedTrue(id) {
-    let m1 = new Date(Date.now() + (30*60*1000));
-    let m2 = new Date(Date.now() + (24*3600*1000));
-    let m3 = new Date(Date.now() + (3*24*3600*1000));
+    const intervals =await getSettings("intervals");
+    let m1 = new Date(Date.now() + intervals.interval1);
+    let m2 = new Date(Date.now() + intervals.interval2);
+    let m3 = new Date(Date.now() + intervals.interval3);
     const abandoned = await carts.updateOne({ checkout_id: id, },
         {
             isAbandoned: true,

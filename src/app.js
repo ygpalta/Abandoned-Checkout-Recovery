@@ -7,6 +7,7 @@ const itemsRouter = require('./routes/items/items.router');
 const checkoutRouter = require('./routes/checkout/checkout.router');
 const abandonedCheckoutRouter = require('./routes/abandonedCheckout/abandonedCheckout.router');
 const ordersRouter = require('./routes/orders/orders.router');
+const settingsRouter = require('./routes/settings/settings.router');
 const app = express();
 
 app.use(cors());
@@ -19,6 +20,7 @@ app.use('/items', itemsRouter);
 app.use('/checkout', checkoutRouter);
 app.use('/abandonedCheckout',abandonedCheckoutRouter);
 app.use('/orders', ordersRouter);
+app.use('/settings', settingsRouter);
 
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, "..", "public", "index.html"))

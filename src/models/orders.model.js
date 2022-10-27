@@ -6,7 +6,6 @@ const orders = require('./orders.mongo');
 
 
 async function getOrderById(id) {
-    //return await items.find({});
     return await orders.find({ id:id,}, {
         '_id': 0, '__v':0,
     });
