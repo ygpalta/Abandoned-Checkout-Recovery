@@ -22,16 +22,25 @@ async function checkIsAbandoned(id) {
 }
 async function getList(){
     const currDate = new Date(Date.now());
-    const list = await carts.find({
-        $and: [
-            { isAbandoned: true },
-            { $or: [{ mail1: currDate }, { mail2: currDate }, { mail3: currDate }] }
-        ]
-    }        
-    )
+    currDate.setSeconds(0,0);
+    console.log("getting list:");
+    const list = await carts.find().
+                        and([
+                            {isAbandoned: true}, 
+                            {   $or: [
+                                { mail1: currDate }, { mail2: currDate }, { mail3: currDate }
+                            ]    } 
+                        ]);
     console.log("scheduled for:");
     console.log(list);
     return list
+}
+
+async function getAbandoned(){
+    const abandoned = await carts.find({
+        isAbandoned: true,
+    });
+    return abandoned
 }
 
 async function saveCart(cart){
@@ -45,9 +54,10 @@ async function saveCart(cart){
 
 async function setIsAbandonedTrue(id) {
     const intervals =await getSettings("intervals");
-    let m1 = new Date(Date.now() + intervals.interval1);
-    let m2 = new Date(Date.now() + intervals.interval2);
-    let m3 = new Date(Date.now() + intervals.interval3);
+    var curr = new Date().setSeconds(0,0);
+    let m1 = new Date(curr + intervals.interval1);
+    let m2 = new Date(curr + intervals.interval2);
+    let m3 = new Date(curr + intervals.interval3);
     const abandoned = await carts.updateOne({ checkout_id: id, },
         {
             isAbandoned: true,
@@ -83,5 +93,6 @@ module.exports = {
     setIsAbandonedTrue,
     setIsAbandonedFalse,
     checkIsAbandoned ,
-    getList 
+    getList,
+    getAbandoned
 }
