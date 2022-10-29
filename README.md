@@ -10,7 +10,7 @@ This project is made using MongoDB, Express.js, React.js and Node (MERN Stack).
 
 ## API End Points
 
-In the project there are demo pages for order, checkout and Admin Page to configure schedule and view emails sent.
+The project contains 2 demo pages for order, checkout and a Admin Panel to configure schedule and view emails sent.
 
 ### Items
 
