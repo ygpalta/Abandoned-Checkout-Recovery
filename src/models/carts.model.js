@@ -31,9 +31,10 @@ async function getList(){
                                 { mail1: currDate }, { mail2: currDate }, { mail3: currDate }
                             ]    } 
                         ]);
+    // const list = [{contact_email: "ygpalta@gmail.com", name:"yoges"}]
     console.log("scheduled for:");
-    console.log(list);
-    return list
+    console.log(await list);
+    return await list
 }
 
 async function getAbandoned(){
