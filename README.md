@@ -2,6 +2,8 @@
 
 This project is made using MongoDB, Express.js, React.js and Node (MERN Stack). 
 
+[Live Project link](https://abandoned-checkout-recovery.herokuapp.com)
+
 ## API End Points
 
 In the project there are demo pages for order, checkout and Admin Page to configure schedule and view emails sent.
