@@ -17,9 +17,15 @@ const ordersSchema = new mongoose.Schema(
     "payment_id": {
       "type": "Number"
     },
-    wasAbandoned: {
+    "wasAbandoned": {
       "type": "Boolean"
-    }
+    },
+    "customer_name": {
+      "type": "Mixed"
+    },
+    "email": {
+      "type": "Mixed"
+    },
   }
   );
 

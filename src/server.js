@@ -3,8 +3,6 @@ require('dotenv').config();
 const http = require('http');
 const app = require('./app');
 const { mongoConnect } = require('./services/mongo');
-const { startBree } = require('./services/appcron');
-const {main} = require('../jobs/sendEmail');
 const server = http.createServer(app);
 const { getList } = require('./models/carts.model.js');
 const nodeMailer = require("nodemailer");
@@ -58,7 +56,6 @@ const job = schedule.scheduleJob('* * * * *', async function(){
 async function startServer() {
    
     await mongoConnect();
-    // startBree();
 
     server.listen(PORT, () => {
         console.log(`Listening on port ${PORT}...`)

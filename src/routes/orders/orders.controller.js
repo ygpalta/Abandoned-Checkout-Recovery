@@ -9,9 +9,6 @@ async function httpOrderById(req, res) {
 
 async function httpSaveOrder(req, res) {
     const order = req.body;
-    const wasAbandoned = await checkIsAbandoned(order.checkout_id);
-    Object.assign(order, {wasAbandoned: wasAbandoned});
-    console.log(order);
     await saveOrder(order);
     await setIsAbandonedFalse(order.checkout_id);
     return res.status(201).json(order);
