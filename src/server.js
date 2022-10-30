@@ -45,7 +45,7 @@ const job = schedule.scheduleJob('* * * * *', async function(){
         console.log("Sending Email reminder to ", checkout.customer.first_name, " on ", checkout.customer.email);
         // Email configuration
         await transporter.sendMail({
-            from: "smtpserver1.2@outlook.com", //SENDER
+            from: "checkoutrecoveryplugin@outlook.com", //SENDER
             to: recipient, //MULTIPLE RECEIVERS
             subject: "Did You Forget This?", //EMAIL SUBJECT
             text: message, //EMAIL BODY IN TEXT FORMAT
