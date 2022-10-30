@@ -41,7 +41,7 @@ const job = schedule.scheduleJob('* * * * *', async function(){
     list.forEach(async (checkout) => {
 
         const recipient = checkout.customer.email;
-        const message = `Hi ${checkout.customer.first_name}, you were trying to place an order with us but failed to do so. Don't worry, You can complete your transaction by clicking on below link: \n ${process.env.URL}/checkout/${checkout.checkout_id} .`;
+        const message = `Hi ${checkout.customer.first_name}, you were trying to place an order with us but failed to do so. Don't worry, You can complete your transaction by clicking on below link: \n https://abandoned-checkout-frontend.herokuapp.com/checkout/${checkout.checkout_id} .`;
         console.log("Sending Email reminder to ", checkout.customer.first_name, " on ", checkout.customer.email);
         // Email configuration
         await transporter.sendMail({
