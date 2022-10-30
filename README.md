@@ -2,11 +2,15 @@
 
 This project is made using MongoDB, Express.js, React.js and Node (MERN Stack). 
 
+[Abandoned Checkout Recovery- Github Repo](https://github.com/ygpalta/abandoned-checkout-recovery)
+
+[Admin Panel FrontEnd - Github Repo](https://github.com/ygpalta/Abandoned-Checkout-Recovery/)
+
 [Live Project Link - https://abandoned-checkout-frontend.herokuapp.com/ (Demo Cart Page)](https://abandoned-checkout-frontend.herokuapp.com)
 
 [Admin Panel - https://abandoned-checkout-frontend.herokuapp.com/admin](https://abandoned-checkout-frontend.herokuapp.com/admin)
 
-[API/Webhook - https://abandoned-checkout-recovery.herokuapp.com/](https://abandoned-checkout-recovery.herokuapp.com/)
+[API/Webhook Live End point - https://abandoned-checkout-recovery.herokuapp.com/](https://abandoned-checkout-recovery.herokuapp.com/)
 
 ## API End Points
 
