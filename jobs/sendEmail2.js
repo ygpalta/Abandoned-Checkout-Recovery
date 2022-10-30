@@ -5,7 +5,7 @@ const { Error } = require("mongoose");
 
 async function main() {
  
-    Transporter configuration
+//     Transporter configuration
     let transporter = nodeMailer.createTransport({
         host: "smtp.office365.com",
         port: 587,
