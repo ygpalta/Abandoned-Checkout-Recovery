@@ -23,18 +23,18 @@ async function checkIsAbandoned(id) {
 async function getList(){
     const currDate = new Date(Date.now());
     currDate.setSeconds(0,0);
-    console.log("getting list:");
-    const list = await carts.find().
-                        and([
+    const list = await carts.find({isAbandoned: true})
+                        .and([
                             {isAbandoned: true}, 
                             {   $or: [
                                 { mail1: currDate }, { mail2: currDate }, { mail3: currDate }
                             ]    } 
                         ]);
-    // const list = [{contact_email: "ygpalta@gmail.com", name:"yoges"}]
-    console.log("scheduled for:");
-    console.log(await list);
-    return await list
+    // const list = [{contact_email: "ygpalta@gmail.com", customer: {name:"yoges"}}]
+    
+    return list;
+    
+    
 }
 
 async function getAbandoned(){
