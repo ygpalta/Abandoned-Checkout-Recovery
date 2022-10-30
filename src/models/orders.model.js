@@ -11,6 +11,14 @@ async function getOrderById(id) {
     });
 }
 
+async function getRecoveredOrders(){
+    console.log("getting recovered");
+    
+    const recovered = await orders.find({wasAbandoned: true});
+    console.log(recovered);
+    return recovered;
+}
+
 async function saveOrder(order) {
     return await orders.findOneAndUpdate({
         id: order.id,
@@ -25,5 +33,6 @@ async function saveOrder(order) {
 
 module.exports = {
     getOrderById,
-    saveOrder
+    saveOrder,
+    getRecoveredOrders
 }
